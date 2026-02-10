@@ -1,0 +1,90 @@
+body {
+    background-color: #000;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+    margin: 0;
+    overflow-x: hidden;
+    animation: bgMove 40s linear infinite;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+.header-section {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(50px, 12vw, 120px);
+    letter-spacing: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.port {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.artstation-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 25px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: 0.4s ease;
+}
+
+.artstation-link:hover {
+    background: #fff;
+    color: #000;
+}
+
+.monster-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    perspective: 2000px;
+    padding: 20px 40px 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.monster-item {
+    transition: transform 0.7s cubic-bezier(0.15, 1, 0.3, 1);
+    transform-style: preserve-3d;
+}
+
+.monster {
+    height: 350px;
+    filter: grayscale(100%) brightness(0.8) contrast(1.1);
+    transition: all 0.6s ease;
+}
+
+.monster-item:hover {
+    transform: rotateY(15deg) rotateX(8deg) scale(1.1);
+    z-index: 50;
+}
+
+.monster-item:hover .monster {
+    filter: grayscale(0%) brightness(1.1);
+    box-shadow: 0 30px 60px rgba(255,255,255,0.1);
+}
